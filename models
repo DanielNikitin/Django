@@ -1,0 +1,9 @@
+# -------- Основа
+# python manage.py runserver  - запустить сервер джанго
+# python manage.py startapp name  - создать app
+
+# -------- Чтобы встроить модели в базу данных джанго проекта:
+
+# python manage.py makemigrations  - создание миграций
+# python manage.py migrate  - применение миграций
+
