@@ -1,0 +1,8 @@
+Git Bash
+source venv/Scripts/activate
+Windows Terminal
+venv\Scripts\activate
+
+
+
+(venv) C:\Users\cock\Desktop\python\GitHub\Django>python manage.py shell

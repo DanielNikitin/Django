@@ -20,8 +20,15 @@ position = models.CharField(max_length = 2,
                             default = admin)
 
 class Staff(models.Model):
+
+    director = 'DI'
+    admin = 'AD'
+    cook = 'CO'
+    cashier = 'CA'
+    cleaner = 'CL'
+
     full_name = models.CharField(max_length = 255)
-    position = models.CharField(max_length = 255,choices=POSITIONS)
+    position = models.CharField(max_length = 255, choices=POSITIONS, default=cashier)
     labor_contract = models.IntegerField()
 
     def get_last_name(self):  # возвращает только фамилию из поля full_name.
@@ -29,8 +36,8 @@ class Staff(models.Model):
 
 
 class Product(models.Model):
-    name = models.CharField(max_length = 255)
-    price = models.FloatField(default = 0.0)
+    name = models.CharField(max_length = 255)  # макс длинна 255 символов
+    price = models.FloatField(default = 0.0)  # дефолт цена 0
 
 
 class Order(models.Model):  # наследуемся от класса Model
@@ -39,9 +46,8 @@ class Order(models.Model):  # наследуемся от класса Model
     cost = models.FloatField(default=0.0)
     take_away = models.BooleanField(default=False)
     complete = models.BooleanField(default=False)
-    staff = models.ForeignKey(Staff, on_delete=models.CASCADE)
-
-    products = models.ManyToManyField(Product, through='ProductOrder')
+    staff = models.ForeignKey("Staff", on_delete=models.CASCADE)
+    products = models.ManyToManyField("Product", through='ProductOrder')
 
     def finish_order(self):  # получить время, которое было затрачено на выполнение заказа
         # при завершении заказа, устанавливал бы текущее время в поле time_out.
@@ -59,11 +65,10 @@ class Order(models.Model):  # наследуемся от класса Model
 class ProductOrder(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    amount = models.IntegerField(default=1)
+    _amount = models.IntegerField(default=1, db_column='amount')
 
     def product_sum(self):  # возвращать стоимость продуктов (product) в зависимости от их количества (amount).
-        product_price = self.product.price
-        return product_price * self.amount
+        return self.product.price * self.amount
 
     @property
     def amount(self):
