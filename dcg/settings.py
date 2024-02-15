@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.redirects',
     'django.contrib.flatpages',
-    'fpages'
+    'fpages',
+    'dcg',
 ]
 
 MIDDLEWARE = [

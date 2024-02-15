@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'darklight/style.css' %}">
+    <title>Dark Light Switcher</title>
+</head>
+
+<body>
+    <button id="toggle"></button>
+    <div class="card">
+        <div class="card-image loading">
+            <img src="{% static 'darklight/1.jpg' %}">
+        </div>
+        <a href="#" class="card-header loading">
+            Card Title Here
+        </a>
+        <p class="card-info loading">
+            Here can be information about something great.
+        </p>
+    </div>
+
+    <script src="{% static 'darklight/index.js' %}"></script>
+</body>
+
+</html>

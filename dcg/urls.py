@@ -14,10 +14,21 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+from django.urls import path
+from fpages import views
 from django.contrib import admin
-from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  # path('/', admin.site.urls) НЕ работает !!!
-   # path('pages/', include('django.contrib.flatpages.urls')),  # Отключил чтобы работала ссылка 127.0.0.1:8000
+    path('', views.home, name='home'),  # Главная страница
+
+    path('about/', views.about, name='about'),  # Страница "О нас"
+    path('contact/', views.contact, name='contact'),  # Страница "Контакты"
+
+    path('coinflip/', views.coinflip, name='coinflip'),
+    path('darklight/', views.darklight, name='darklight'),
+    path('bgvideo/', views.bgvideo, name='bgvideo'),
+    path('new_des/', views.new_des, name='new_des'),
+
+    path('admin/', admin.site.urls),  #
 ]

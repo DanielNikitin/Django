@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bgvideo/style.css' %}">
+    <title>Daily Customs Garage | BG Video</title>
+</head>
+
+<body>
+    <div class="container">
+        <video src="{% static 'bgvideo/bgvideo.mp4' %}" autoplay loop playsinline muted></video>
+
+        <header>
+            <h1>Daily Customs <span>Garage</span></h1>
+        </header>
+
+        <div class="description">
+            <p>
+                We are a group of people, enthusiasts, who build sports cars from ordinary ones.
+            </p>
+            <p class="copyright">Copyright © 2024 <a
+                    href="https://www.pexels.com/video/drone-footage-of-mountain-covered-in-trees-6807924/">All rights reserved :: DCG.EE</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
