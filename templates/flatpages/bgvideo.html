@@ -10,22 +10,43 @@
 </head>
 
 <body>
-    <div class="container">
-        <video src="{% static 'bgvideo/bgvideo.mp4' %}" autoplay loop playsinline muted></video>
-
         <header>
-            <h1>Daily Customs <span>Garage</span></h1>
+            <nav class="navbar">
+                <h2 class="logo"><a href="#">LOGO</a></h2>
+                <input type="checkbox" id="menu-toggler">
+                <label for="menu-toggler" id="hamburger-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path d="M3 18h18v-2H3v2zm0-5h18V11H3v2zm0-7v2h18V6H3z" />
+                    </svg>
+                </label>
+                <ul class="all-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
         </header>
+
+
+        <div class="container">
+            <video src="{% static 'bgvideo/bgvideo.mp4' %}" autoplay loop playsinline muted></video>    
+
+
+            <header>
+                <h1>Daily Customs <span>Garage</span></h1>
+            </header>
+
 
         <div class="description">
             <p>
                 We are a group of people, enthusiasts, who build sports cars from ordinary ones.
             </p>
             <p class="copyright">Copyright © 2024 <a
-                    href="https://www.pexels.com/video/drone-footage-of-mountain-covered-in-trees-6807924/">All rights reserved :: DCG.EE</a>
+                    href="https://www.127.0.0.1:8000/bgvideo">All rights reserved :: DCG.EE</a>
             </p>
-        </div>
-    </div>
 </body>
 
 </html>
